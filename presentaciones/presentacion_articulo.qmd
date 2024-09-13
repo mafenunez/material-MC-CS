@@ -1,0 +1,83 @@
+---
+pagetitle: "Presentación artículo"
+author: "María Fernanda"
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+      
+format: 
+  revealjs:
+    #logo: images/eval-hires.png
+    slide-number: true
+    theme: [pp.scss]
+    title-slide-attributes:
+      visibility: false
+#      data-background-image: images/portada.jpg
+#      data-background-size: cover
+    auto-play-media: true
+
+
+editor:
+  render-on-save: true
+---
+
+
+
+:::: { .v-center-container}
+
+# [***Forecasting elections with non-representative polls (2015)***]{.purple}{data-background-color="#CABFFF"}
+
+-------------------------------------------------------------------------------------------
+<br />
+María Fernanda Núñez <br/ > 
+Método Computacionales para las Ciencias Sociales <br />
+13 de septiembre de 2024
+
+::::
+
+## [Motivación del artículo]{.purple}
+
+- Antecendente: adopción de **sondeos representativos** 
+- **Error de predicción** de la revista Literary Digest en 1936 
+- Otros encuestadores (Gallup, Crossley y Roper) *utilizaron muestras considerablemente más pequeñas pero representativas y predijeron el resultado de las elecciones con un nivel razonable de precisión* 
+
+::: {.content-box-purple}
+Base del [sondeo representativo moderno]{.purple}: <br />
+**Muestreo representativo**, que es la probabilidad de que tienen todos los individuos de una población objetivo concreta de ser incluidos en la muestra
+
+:::
+
+
+## [Motivación del artículo]{.purple}
+
+- Lo anterior, causa la caída del [**muestreo no representativo**]{.purple} o [***"de conveniencia"***]{.purple}
+
+:::{.content-box-purple}
+*"¿Por qué volvemos sobre este caso aparentemente resuelto hace tiempo?"* (p. 2)
+<br/>
+<br />
+Dos tendencias recientes: <br/>
+1. **Marcación de dígitos aleatorio (RDD)** <br />
+2. 
+:::
+
+## [Motivación del artículo]{.purple}
+
+- Pretende 
+
+## [Metodología: datos]{.black} {data-background-color="#CABFFF"}
+
+## [Metodología: procedimientos]{.black} {data-background-color="#CABFFF"}
+
+Dos etapas 
+
+## Primera etapa: ajuste 
+
+## Segunda etapa: predicción 
+
+## [Principales conclusiones]{.purple} 
+
+## [Reflexión propia]{.black} {data-background-color="#CABFFF"}
