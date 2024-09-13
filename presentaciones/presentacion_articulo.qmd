@@ -33,7 +33,7 @@ editor:
 -------------------------------------------------------------------------------------------
 <br />
 María Fernanda Núñez <br/ > 
-Método Computacionales para las Ciencias Sociales <br />
+Curso Método Computacionales para las Ciencias Sociales <br />
 13 de septiembre de 2024
 
 ::::
@@ -41,7 +41,7 @@ Método Computacionales para las Ciencias Sociales <br />
 ## [Motivación del artículo]{.purple}
 
 - Antecendente: adopción de **sondeos representativos** 
-- **Error de predicción** de la revista Literary Digest en 1936 
+- **Error de predicción** de la revista Literary Digest en 1936 (victoria aplastante del candiato republicano Franklin Rooselvelt)
 - Otros encuestadores (Gallup, Crossley y Roper) *utilizaron muestras considerablemente más pequeñas pero representativas y predijeron el resultado de las elecciones con un nivel razonable de precisión* 
 
 ::: {.content-box-purple}
@@ -56,28 +56,76 @@ Base del [sondeo representativo moderno]{.purple}: <br />
 - Lo anterior, causa la caída del [**muestreo no representativo**]{.purple} o [***"de conveniencia"***]{.purple}
 
 :::{.content-box-purple}
-*"¿Por qué volvemos sobre este caso aparentemente resuelto hace tiempo?"* (p. 2)
+*"¿Por qué volvemos sobre este caso aparentemente resuelto hace tiempo?"* 
 <br/>
 <br />
 Dos tendencias recientes: <br/>
-1. **Marcación de dígitos aleatorio (RDD)** <br />
-2. 
+1. **Altas tasas de no respuesta** en las encuestas representativas <br />
+2. **Rentabilidad** de recoger muestras pocos representativas a través de encuestas en línea
 :::
 
 ## [Motivación del artículo]{.purple}
 
-- Pretende 
+- Pretende demostrar que con un **ajuste estadístico adecuado las encuestas no representativas pueden utilizarse para generar previsiones electorales precisas** y que a menudo esto puede lograrse más rápidamente y con un gasto menor que los métodos de encuesta tradicionales
 
 ## [Metodología: datos]{.black} {data-background-color="#CABFFF"}
 
+- **Encuesta de participación** disponible durante 45 días anteriores a las elecciones presidenciales estadounidenses de 2012 en la [**plataforma de juego Xbox**]{.purple}
+- Pregunta estándar: [*"Si las elecciones se celebraran hoy, ¿a quién votaría?*]{.purple}
+- [**Información demográfica**]{.purple}: sexo, edad, eduación, estado, identificación de partido, idelogía política y a quién votaron en las elecciones presidenciales de 2008
+- **345.858** encuestados, donde el 65% corresponde a hombres jóvenes de 18 a 29 años
+
 ## [Metodología: procedimientos]{.black} {data-background-color="#CABFFF"}
 
-Dos etapas 
+:::{.content-box-blue}
+*Dos etapas*: 
 
-## Primera etapa: ajuste 
+- Estimaciones diarias de la intención de los votantes a través del **ajuste mediante [regresión multinivel]{.purple}** y [**Post estratificación**]{.purple} (MRP)
+- Transformar la **inteción de los votantes** en **proyecciones de participación de votos** y **votos electorales** 
+:::
 
-## Segunda etapa: predicción 
+## [Metodología: procedimientos]{.black} {data-background-color="#CABFFF"}
+
+Que se traducen en *tres pasos*: 
+
+1. Estimar la distribución conjunta de las [**intenciones de los votantes estatales y nacionales**]{.purple} aplicando MRP a los datos Xbox 
+2. Ajuste del [**modelo de calibración anidado a datos históricos**]{.purple} para obtener estimaciones puntuales de los parámetros 
+3. Con ello, convertir la distrbución de la intención de los votantes en [**pronósticos del día de las elecciones**]{.purple} 
+
+
+## [Primera etapa: [Regresión Multinivel con Post estratificación (MRP)]{.purple}]{.black}{data-background-color="#CABFFF"} 
+
+- La idea central de MRP es dividir los datos en miles de celdas demográficas, estimar la intención de los votantes a nivel de celda utilizando un **modelo de regresión multinivel** y, finalmente, agregar las estimaciones a nivel de celda de acuerdo con la composición demográfica de la población objetivo
+- Para la **post estratificación** se utilizan datos de las encuestas a pie de urna de las elecciones presidenciales de 2008 (n = 101.638)
+- Lo anterior, facilita la [**estimación precisa de la intención de voto**]{.purple} a través de estas categorías demográficas unidimensionales y la estimación de las interacciones bidireccionales
+
+
+
+
+## [Segunda etapa: [predicción]{.purple}]{.black}{data-background-color="#CABFFF"} 
+
+- Se busca *convertir* las **estimaciones diarias de la intención de los votantes** en [**predicciones del día de las elecciones**]{.purple}
+- Se infiere un mapeo de la intención de los votantes a los **resultados electorales** (de tres elecciones presidenciales estadounidenses anteriores, en 2000, 2004 y 2008)
+- Se modelan las **correlaciones a nivel estatal**, mediante modelos nacionales y estatales anidados y términos de error correlacionados
 
 ## [Principales conclusiones]{.purple} 
 
-## [Reflexión propia]{.black} {data-background-color="#CABFFF"}
+:::{.content-box-blue}
+***General***: <br/>
+<br/>
+Los sondeos no representativos son **prometedores** no sólo para la previsión electoral, sino también para [**medir la opinión pública**]{.purple} sobre una amplia gama de cuestiones sociales, económicas y culturales 
+
+:::
+
+## [Principales conclusiones]{.purple} 
+
+:::{.content-box-purple}
+***Específicas***: <br/>
+<br/>
+
+- En general, se presenta [**consistencia**]{.purple} de las estimaciones con los datos de Xbox con las predicciones de probabilidades del mercado 
+- Sin embargo, en el **caso de carreras para reñidas** presenta cierta inconsistencia
+- Para los **resultados extremos** el modelo no captura buenas predicciones 
+:::
+
+# [*Reflexión propia*]{.black} {data-background-color="#CABFFF"}

@@ -336,7 +336,7 @@
 <h2><span class="purple">Motivación del artículo</span></h2>
 <ul>
 <li>Antecendente: adopción de <strong>sondeos representativos</strong></li>
-<li><strong>Error de predicción</strong> de la revista Literary Digest en 1936</li>
+<li><strong>Error de predicción</strong> de la revista Literary Digest en 1936 (victoria aplastante del candiato republicano Franklin Rooselvelt)</li>
 <li>Otros encuestadores (Gallup, Crossley y Roper) <em>utilizaron muestras considerablemente más pequeñas pero representativas y predijeron el resultado de las elecciones con un nivel razonable de precisión</em></li>
 </ul>
 <div class="content-box-purple">
@@ -349,33 +349,78 @@
 <li>Lo anterior, causa la caída del <span class="purple"><strong>muestreo no representativo</strong></span> o <span class="purple"><strong><em>“de conveniencia”</em></strong></span></li>
 </ul>
 <div class="content-box-purple">
-<p><em>“¿Por qué volvemos sobre este caso aparentemente resuelto hace tiempo?”</em> (p.&nbsp;2) <br> <br> Dos tendencias recientes: <br> 1. <strong>Marcación de dígitos aleatorio (RDD)</strong> <br> 2.</p>
+<p><em>“¿Por qué volvemos sobre este caso aparentemente resuelto hace tiempo?”</em> <br> <br> Dos tendencias recientes: <br> 1. <strong>Altas tasas de no respuesta</strong> en las encuestas representativas <br> 2. <strong>Rentabilidad</strong> de recoger muestras pocos representativas a través de encuestas en línea</p>
 </div>
 </section>
 <section id="motivación-del-artículo-2" class="slide level2">
 <h2><span class="purple">Motivación del artículo</span></h2>
 <ul>
-<li>Pretende</li>
+<li>Pretende demostrar que con un <strong>ajuste estadístico adecuado las encuestas no representativas pueden utilizarse para generar previsiones electorales precisas</strong> y que a menudo esto puede lograrse más rápidamente y con un gasto menor que los métodos de encuesta tradicionales</li>
 </ul>
 </section>
 <section id="metodología-datos" class="slide level2" data-background-color="#CABFFF">
 <h2><span class="black">Metodología: datos</span></h2>
+<ul>
+<li><strong>Encuesta de participación</strong> disponible durante 45 días anteriores a las elecciones presidenciales estadounidenses de 2012 en la <span class="purple"><strong>plataforma de juego Xbox</strong></span></li>
+<li>Pregunta estándar: <span class="purple"><em>“Si las elecciones se celebraran hoy, ¿a quién votaría?</em></span></li>
+<li><span class="purple"><strong>Información demográfica</strong></span>: sexo, edad, eduación, estado, identificación de partido, idelogía política y a quién votaron en las elecciones presidenciales de 2008</li>
+<li><strong>345.858</strong> encuestados, donde el 65% corresponde a hombres jóvenes de 18 a 29 años</li>
+</ul>
 </section>
 <section id="metodología-procedimientos" class="slide level2" data-background-color="#CABFFF">
 <h2><span class="black">Metodología: procedimientos</span></h2>
-<p>Dos etapas</p>
+<div class="content-box-blue">
+<p><em>Dos etapas</em>:</p>
+<ul>
+<li>Estimaciones diarias de la intención de los votantes a través del <strong>ajuste mediante <span class="purple">regresión multinivel</span></strong> y <span class="purple"><strong>Post estratificación</strong></span> (MRP)</li>
+<li>Transformar la <strong>inteción de los votantes</strong> en <strong>proyecciones de participación de votos</strong> y <strong>votos electorales</strong></li>
+</ul>
+</div>
 </section>
-<section id="primera-etapa-ajuste" class="slide level2">
-<h2>Primera etapa: ajuste</h2>
+<section id="metodología-procedimientos-1" class="slide level2" data-background-color="#CABFFF">
+<h2><span class="black">Metodología: procedimientos</span></h2>
+<p>Que se traducen en <em>tres pasos</em>:</p>
+<ol type="1">
+<li>Estimar la distribución conjunta de las <span class="purple"><strong>intenciones de los votantes estatales y nacionales</strong></span> aplicando MRP a los datos Xbox</li>
+<li>Ajuste del <span class="purple"><strong>modelo de calibración anidado a datos históricos</strong></span> para obtener estimaciones puntuales de los parámetros</li>
+<li>Con ello, convertir la distrbución de la intención de los votantes en <span class="purple"><strong>pronósticos del día de las elecciones</strong></span></li>
+</ol>
 </section>
-<section id="segunda-etapa-predicción" class="slide level2">
-<h2>Segunda etapa: predicción</h2>
+<section id="primera-etapa-regresión-multinivel-con-post-estratificación-mrp" class="slide level2" data-background-color="#CABFFF">
+<h2><span class="black">Primera etapa: <span class="purple">Regresión Multinivel con Post estratificación (MRP)</span></span></h2>
+<ul>
+<li>La idea central de MRP es dividir los datos en miles de celdas demográficas, estimar la intención de los votantes a nivel de celda utilizando un <strong>modelo de regresión multinivel</strong> y, finalmente, agregar las estimaciones a nivel de celda de acuerdo con la composición demográfica de la población objetivo</li>
+<li>Para la <strong>post estratificación</strong> se utilizan datos de las encuestas a pie de urna de las elecciones presidenciales de 2008 (n = 101.638)</li>
+<li>Lo anterior, facilita la <span class="purple"><strong>estimación precisa de la intención de voto</strong></span> a través de estas categorías demográficas unidimensionales y la estimación de las interacciones bidireccionales</li>
+</ul>
+</section>
+<section id="segunda-etapa-predicción" class="slide level2" data-background-color="#CABFFF">
+<h2><span class="black">Segunda etapa: <span class="purple">predicción</span></span></h2>
+<ul>
+<li>Se busca <em>convertir</em> las <strong>estimaciones diarias de la intención de los votantes</strong> en <span class="purple"><strong>predicciones del día de las elecciones</strong></span></li>
+<li>Se infiere un mapeo de la intención de los votantes a los <strong>resultados electorales</strong> (de tres elecciones presidenciales estadounidenses anteriores, en 2000, 2004 y 2008)</li>
+<li>Se modelan las <strong>correlaciones a nivel estatal</strong>, mediante modelos nacionales y estatales anidados y términos de error correlacionados</li>
+</ul>
 </section>
 <section id="principales-conclusiones" class="slide level2">
 <h2><span class="purple">Principales conclusiones</span></h2>
+<div class="content-box-blue">
+<p><strong><em>General</em></strong>: <br> <br> Los sondeos no representativos son <strong>prometedores</strong> no sólo para la previsión electoral, sino también para <span class="purple"><strong>medir la opinión pública</strong></span> sobre una amplia gama de cuestiones sociales, económicas y culturales</p>
+</div>
 </section>
-<section id="reflexión-propia" class="slide level2" data-background-color="#CABFFF">
-<h2><span class="black">Reflexión propia</span></h2>
+<section id="principales-conclusiones-1" class="slide level2">
+<h2><span class="purple">Principales conclusiones</span></h2>
+<div class="content-box-purple">
+<p><strong><em>Específicas</em></strong>: <br> <br></p>
+<ul>
+<li>En general, se presenta <span class="purple"><strong>consistencia</strong></span> de las estimaciones con los datos de Xbox con las predicciones de probabilidades del mercado</li>
+<li>Sin embargo, en el <strong>caso de carreras para reñidas</strong> presenta cierta inconsistencia</li>
+<li>Para los <strong>resultados extremos</strong> el modelo no captura buenas predicciones</li>
+</ul>
+</div>
+</section>
+<section id="reflexión-propia" class="title-slide slide level1 center" data-background-color="#CABFFF">
+<h1><span class="black"><em>Reflexión propia</em></span></h1>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
